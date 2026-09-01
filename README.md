@@ -28,15 +28,6 @@
 
 **[Open Medical & Travel Expense Request](https://ms-roshni.github.io/Diona-Assignment-Roshini-MS/medical-travel-expense/)**
 
-## Assignment Exercises
-
-| Exercise | Source PDF | Generator | Demo Video |
-| --- | --- | --- | --- |
-| 1 | `Medical and Travel Expense Request.pdf` | [Medical & Travel Expense Request](medical-travel-expense/index.html) | [YouTube](https://www.youtube.com/watch?v=dPwB7HfJD-E) |
-| 2 | `Worker Progress Report.pdf` | [Worker Progress Report](worker-progress-report/index.html) | [YouTube](https://www.youtube.com/watch?v=TvyC6veEtF8) |
-
-Open [index.html](index.html) for a landing page linking to both generators.
-
 ## How to Run
 
 No build tools or server are required — everything is static HTML/CSS/JS.
