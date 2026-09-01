@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Worker Progress Report — Generator</title>
+<link rel="stylesheet" href="../shared/editor.css" />
+<link rel="stylesheet" href="../shared/paper.css" />
+<link rel="stylesheet" href="../shared/common.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-topbar">
+    <h1>Worker Progress Report — Generator</h1>
+    <div>
+      <button id="print-btn" class="btn secondary small">Print / Save as PDF</button>
+      <a class="back-link" href="../index.html">&larr; Back to overview</a>
+      <span class="print-hint">Tip: in the print dialog, open "More settings" and turn off "Headers and footers" so the browser URL/date isn't added to the PDF.</span>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="control-panel" id="control-panel"></aside>
+    <main class="paper-stack" id="document-root" aria-label="Document preview"></main>
+  </div>
+
+  <script src="../shared/dom.js"></script>
+  <script src="../shared/components.js"></script>
+  <script src="../shared/editor.js"></script>
+  <script src="../shared/paginate.js"></script>
+  <script src="data.js"></script>
+  <script src="render.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

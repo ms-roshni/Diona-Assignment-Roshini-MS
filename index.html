@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Assignment Overview — Dynamic Document Generators</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #eef1f5; color: #1c1c1c; }
+  header { background: #0b3d91; color: #fff; padding: 28px 24px; }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header p { margin: 0; color: #cfe0ff; font-size: 14px; }
+  main { max-width: 900px; margin: 0 auto; padding: 28px 24px 60px; }
+  .card { background: #fff; border-radius: 10px; padding: 22px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .card h2 { margin-top: 0; font-size: 18px; }
+  .card p { line-height: 1.5; font-size: 14.5px; color: #333; }
+  .card a.btn { display: inline-block; background: #0b3d91; color: #fff; text-decoration: none; padding: 9px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; margin-top: 8px; }
+  ul { line-height: 1.6; font-size: 14px; }
+  code { background: #f1f3f6; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Dynamic Document Generators</h1>
+    <p>Two data-driven, print-accurate HTML/CSS/JS reproductions of the supplied PDFs.</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>1. Medical &amp; Travel Expense Request</h2>
+      <p>Recreates <em>Medical and Travel Expense Request.pdf</em>: a claim form with six repeatable expense tables (prescriptions, over-the-counter drugs, supplies, parking, mileage, bus/taxi fare), a header with logo/claim number, a footer with Worker App ID and live page numbers, and automatic re-pagination as rows are added or removed.</p>
+      <a class="btn" href="medical-travel-expense/index.html">Open generator &rarr;</a>
+    </div>
+    <div class="card">
+      <h2>2. Worker Progress Report</h2>
+      <p>Recreates <em>Worker Progress Report.pdf</em>: a multi-section status form (return-to-work status, recovery, pain scale, treatment, medication, exercises, certification) driven by exclusive selections and free-text answers, with the same shared header/footer/pagination system.</p>
+      <a class="btn" href="worker-progress-report/index.html">Open generator &rarr;</a>
+    </div>
+    <div class="card">
+      <h2>How this was built</h2>
+      <ul>
+        <li>Both apps share <code>/shared</code>: a pagination engine that measures real rendered block heights and lays them out across US-Letter "paper" pages, a footer/header component builder, and small DOM helpers.</li>
+        <li>Each app's left panel edits a plain JS state object; every change re-runs the same render function used to build the initial page, so the document and the pagination always reflect the current data — including how many pages are needed.</li>
+        <li><a href="PROMPTS.md">PROMPTS.md</a> — AI prompt history disclosure for this assignment.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

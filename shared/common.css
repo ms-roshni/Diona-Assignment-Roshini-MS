@@ -1,0 +1,276 @@
+/* Shared visual language for the generated documents (both forms). */
+
+.doc-masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.org-address {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1 1 auto;
+  padding-top: 2px;
+}
+
+.doc-title-block {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.doc-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #111;
+}
+
+.claim-boxes {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.claim-no-box,
+.form-code-box {
+  border: 1.5px solid #111;
+  padding: 6px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.doc-intro {
+  font-size: 15px;
+  margin: 4px 0 22px;
+}
+
+.doc-intro .data-value {
+  color: var(--data-color);
+}
+
+.doc-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.section-title.h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.doc-table th,
+.doc-table td {
+  border: 1px solid #222;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.doc-table th {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  background: #fff;
+}
+
+.doc-table td.data-value {
+  color: var(--data-color);
+}
+
+.doc-table td.empty-row {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+.select-box {
+  border: 1.5px solid #222;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.select-box .select-label {
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.check-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+}
+
+.check-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: default;
+}
+
+.check-box {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.check-box.checked {
+  font-weight: 700;
+}
+
+.free-text-box {
+  border: 1.5px solid #222;
+  padding: 12px 14px;
+  min-height: 20px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.free-text-box .fld-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.free-text-box .fld-value {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.free-text-box .fld-value,
+.doc-intro .data-value {
+  color: var(--data-color);
+}
+
+/*
+ * A "field" is one self-contained visual unit: value on top, its own
+ * underline, and its own label directly beneath — all in a single flex
+ * column. `.field-sentence` lays several of these (plus plain
+ * `.field-static` fragments) out in a wrapping row, so a field's label
+ * always stays attached to its own value no matter how long a neighboring
+ * value is or how many fields sit next to it.
+ */
+.field-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 10px;
+  row-gap: 12px;
+  margin: 14px 0;
+  font-size: 14.5px;
+  line-height: 1.3;
+}
+
+.field-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 260px;
+}
+
+.field-unit .field-value {
+  padding: 0 2px 3px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.field-unit .field-line {
+  align-self: stretch;
+  border-bottom: 1px solid #333;
+  min-width: 110px;
+}
+
+.field-unit .field-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.field-unit.field-static {
+  max-width: none;
+}
+
+.field-unit.field-static .field-value {
+  padding: 0;
+  white-space: nowrap;
+}
+
+.field-unit.field-static .field-line,
+.field-unit.field-static .field-label {
+  visibility: hidden;
+}
+
+.pain-scale {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.pain-scale p {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 14.5px;
+}
+
+.pain-scale .pain-grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 6px 18px;
+  font-size: 13.5px;
+}
+
+.privacy-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 14px;
+  margin-top: 20px;
+  font-size: 13.5px;
+}
+
+.privacy-line a {
+  color: var(--data-color);
+}
+
+.certify-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}

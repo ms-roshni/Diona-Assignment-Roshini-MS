@@ -1,0 +1,5 @@
+/* Page-specific tweaks for the Medical & Travel Expense Request generator. */
+
+.doc-header-block {
+  margin-bottom: 4px;
+}

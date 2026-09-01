@@ -1,0 +1,5 @@
+/* Page-specific tweaks for the Worker Progress Report generator. */
+
+.doc-header-block {
+  margin-bottom: 4px;
+}

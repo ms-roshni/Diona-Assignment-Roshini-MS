@@ -1,0 +1,116 @@
+/* Shared "paper sheet" look for paginated documents, used by both sites. */
+
+:root {
+  --paper-width: 816px;
+  --paper-height: 1056px;
+  --paper-padding: 48px;
+  --ink: #1c1c1c;
+  --muted: #555;
+  --line: #222;
+  --accent: #0b3d91;
+  --data-color: #1f4e8c;
+}
+
+.paper-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 12px 64px;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+.paper-page {
+  width: var(--paper-width);
+  min-width: var(--paper-width);
+  height: var(--paper-height);
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.paper-page .page-content {
+  flex: 1 1 auto;
+  padding: var(--paper-padding);
+  padding-bottom: 8px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.paper-page .page-footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px var(--paper-padding) 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.paper-page .page-footer .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.paper-page .page-footer .footer-right {
+  text-align: right;
+}
+
+.paginate-sandbox {
+  box-shadow: none !important;
+}
+
+/* ---- Print: emulate real US-Letter pages, one per sheet ----
+   The page div keeps the EXACT same pixel dimensions (816x1056 = 8.5x11in
+   @96dpi) on screen and in print, and @page margin is zero (spacing comes
+   entirely from .page-content's own padding). This keeps print output
+   pixel-identical to what the pagination engine measured on screen —
+   otherwise a narrower/wider printable area reflows text differently and
+   breaks alignment and page counts. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #document-root,
+  #document-root * {
+    visibility: visible;
+  }
+  #document-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .paper-stack {
+    gap: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  .paper-page {
+    box-shadow: none;
+    width: var(--paper-width);
+    min-width: var(--paper-width);
+    height: var(--paper-height);
+    margin: 0 auto;
+    break-after: page;
+    page-break-after: always;
+  }
+  .paper-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page {
+    size: letter;
+    margin: 0;
+  }
+}
